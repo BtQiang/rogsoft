@@ -505,10 +505,25 @@ function menu_hook(title, tab) {
 														var MODEL = '<% nvram_get("odmpid"); %>' || '<% nvram_get("productid"); %>';
 														var BUILD = '<% nvram_get("buildno"); %>'
 														var FWVER = '<% nvram_get("extendno"); %>';
-														if (FWVER.indexOf('koolshare') != -1){
-															$("#rog_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;官改固件");
-														}else if(FWVER == "0"){
-															$("#rog_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林改版固件");
+														var RC_SUPPORT = '<% nvram_get("rc_support"); %>';
+														if (FWVER){
+															if (FWVER.indexOf('koolshare') != -1){
+																$("#rog_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;官改固件");
+															}else if(FWVER == "0"){
+																//正式版
+																if(RC_SUPPORT.indexOf("koolsoft") != -1){
+																	$("#rog_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林改版固件");
+																}else{
+																	$("#rog_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林原版固件");
+																}
+															}else{
+																//非正式版，eg： alpha4，beta1
+																if(RC_SUPPORT.indexOf("koolsoft") != -1){
+																	$("#rog_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林改版固件");
+																}else{
+																	$("#rog_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林原版固件");
+																}
+															}
 														}else{
 															$("#rog_ver").html(MODEL + "&nbsp;&nbsp;" + "<% nvram_get("firmver"); %>" + "." + BUILD + "_" + FWVER + "&nbsp;&nbsp;华硕官方固件");
 														}
