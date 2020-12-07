@@ -4,7 +4,8 @@ alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】:'
 module=aliddns
 ROG_86U=0
 EXT_NU=$(nvram get extendno)
-EXT_NU=${EXT_NU%_*}
+EXT_NU=$(echo ${EXT_NU%_*} | grep -Eo "^[0-9]{1,10}$")
+[ -z "${EXT_NU}" ] && EXT_NU="0"
 DIR=$(cd $(dirname $0); pwd)
 odmpid=$(nvram get odmpid)
 productid=$(nvram get productid)

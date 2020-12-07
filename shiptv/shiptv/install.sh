@@ -7,7 +7,8 @@ TITLE="上海电信IPTV"
 DESCRIPTION="上海电信IPTV，4K IPTV 一键开启"
 ROG_86U=0
 EXT_NU=$(nvram get extendno)
-EXT_NU=${EXT_NU%_*}
+EXT_NU=$(echo ${EXT_NU%_*} | grep -Eo "^[0-9]{1,10}$")
+[ -z "${EXT_NU}" ] && EXT_NU="0"
 odmpid=$(nvram get odmpid)
 productid=$(nvram get productid)
 [ -n "${odmpid}" ] && MODEL="${odmpid}" || MODEL="${productid}"

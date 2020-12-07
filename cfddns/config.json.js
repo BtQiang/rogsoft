@@ -1,9 +1,9 @@
 {
 "version":"1.0",
-"md5":"f655dd2ca5cfae9eb7a6f73630483cea",
+"md5":"6c241b3efffac51be92f62c8ff9fba39",
 "home_url":"Module_cfddns.asp",
 "title":"CloudFlare DDNS",
 "description":"CloudFlare DDNS",
 "changelog":"",
-"build_date":"2020-10-19_14:55:33"
+"build_date":"2020-12-07_17:29:28"
 }
