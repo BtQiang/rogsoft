@@ -971,24 +971,28 @@ function verifyFields(r) {
 														if (FWVER.indexOf('koolshare') != -1){
 															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;官改固件");
 														}else if(FWVER == "0"){
-															//正式版
+															//ML正式版
 															if(RC_SUPPORT.indexOf("koolsoft") != -1){
 																$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林改版固件");
 															}else{
 																$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林原版固件");
 															}
 														}else{
-															//非正式版，eg： alpha4，beta1
-															if(RC_SUPPORT.indexOf("koolsoft") != -1){
-																$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林改版固件");
+															//非正式版，eg： alpha4，beta1，82072-gc842320
+															if (FWVER.indexOf('alpha') != -1 || FWVER.indexOf('beta') != -1) {
+																if(RC_SUPPORT.indexOf("koolsoft") != -1){
+																	$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林改版固件");
+																}else{
+																	$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林原版固件");
+																}
 															}else{
-																$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林原版固件");
+																$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;华硕官方固件");
 															}
 														}
 													}else{
 														$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + "<% nvram_get("firmver"); %>" + "." + BUILD + "_" + FWVER + "&nbsp;&nbsp;华硕官方固件");
 													}
-												</script>
+												</script>	
 											</tr>
 											<tr>
 												<th>网卡温度</th>
