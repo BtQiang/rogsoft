@@ -107,11 +107,12 @@ function init() {
 }
 
 function show_ui_switch(){
+	var BLD = '<% nvram_get("buildno"); %>';
 	var EXT = '<% nvram_get("extendno"); %>';
 	if(productid == "RT-AC86U"){
 		if (EXT.indexOf('koolshare') != -1){
 			EXT_1 = EXT.match(/(\S*)_/)[1];
-			if(EXT_1 < "81918"){
+			if(EXT_1 < "81918" && BLD != "386"){
 				$("#FANC").hide();
 				$("#UI_SWITCH").show();
 				$("#msg2").show();
