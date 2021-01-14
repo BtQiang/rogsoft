@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 source /koolshare/scripts/base.sh
 alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】:'
 DIR=$(cd $(dirname $0); pwd)
@@ -6,6 +6,7 @@ module=wifiboost
 TITLE="Wi-Fi Boost"
 DESCRIPTION="路由器功率增强，强过澳大利亚！"
 ROG_86U=0
+BUILDNO=$(nvram get buildno)
 EXT_NU=$(nvram get extendno)
 EXT_NU=$(echo ${EXT_NU%_*} | grep -Eo "^[0-9]{1,10}$")
 [ -z "${EXT_NU}" ] && EXT_NU="0"
@@ -58,7 +59,7 @@ else
 fi
 
 # 判断固件UI类型
-if [ -n "$(nvram get extendno | grep koolshare)" -a "$(nvram get productid)" == "RT-AC86U" -a "${EXT_NU}" -lt "81918" ];then
+if [ -n "$(nvram get extendno | grep koolshare)" -a "$(nvram get productid)" == "RT-AC86U" -a "${EXT_NU}" -lt "81918" -a "${BUILDNO}" != "386" ];then
 	ROG_86U=1
 fi
 

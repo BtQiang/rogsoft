@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 source /koolshare/scripts/base.sh
 alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】:'
 DIR=$(cd $(dirname $0); pwd)
@@ -89,11 +89,14 @@ if [ "${MODEL}" == "RAX80" ];then
 fi
 cp -rf /tmp/rog/uninstall.sh /koolshare/scripts/uninstall_rog.sh
 if [ "$ROG" == "1" ];then
+	echo_date "安装ROG皮肤！"
 	continue
 else
 	if [ "$TUF" == "1" ];then
+		echo_date "安装TUF皮肤！"
 		sed -i 's/3e030d/3e2902/g;s/91071f/92650F/g;s/680516/D0982C/g;s/cf0a2c/c58813/g;s/700618/74500b/g;s/530412/92650F/g' /koolshare/webs/Module_${module}.asp >/dev/null 2>&1
 	else
+		echo_date "安装ASUSWRT皮肤！"
 		sed -i '/rogcss/d' /koolshare/webs/Module_${module}.asp >/dev/null 2>&1
 	fi
 fi

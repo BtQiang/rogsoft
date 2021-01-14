@@ -1,9 +1,9 @@
 {
 "version":"1.4",
-"md5":"f44cd7e9a4aa66169350d4cfbb48b032",
+"md5":"d4165128581262d01ea7c8495e1d05f2",
 "home_url":"Module_serverchan.asp",
 "title":"serverChan微信推送",
 "description":"从路由器推送状态及通知的工具",
 "changelog":"",
-"build_date":"2020-12-07_17:29:28"
+"build_date":"2021-01-14_13:56:20"
 }
