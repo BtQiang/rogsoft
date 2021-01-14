@@ -26,11 +26,12 @@ eval $(dbus export softcenter_installing_)
 BIN_NAME=$(basename "$0")
 BIN_NAME="${BIN_NAME%.*}"
 ROG_86U=0
+BUILDNO=$(nvram get buildno)
 EXT_NU=$(nvram get extendno)
 EXT_NU=$(echo ${EXT_NU%_*} | grep -Eo "^[0-9]{1,10}$")
 [ -z "${EXT_NU}" ] && EXT_NU="0"
 
-if [ -n "$(nvram get extendno | grep koolshare)" -a "$(nvram get productid)" == "RT-AC86U" -a "${EXT_NU}" -lt "81918" ];then
+if [ -n "$(nvram get extendno | grep koolshare)" -a "$(nvram get productid)" == "RT-AC86U" -a "${EXT_NU}" -lt "81918" -a "${BUILDNO}" != "386" ];then
 	ROG_86U=1
 fi
 
@@ -249,6 +250,7 @@ install_ks_module() {
 			echo_date "为插件【${softcenter_installing_name}】安装TUF风格皮肤..."
 			sed -i 's/3e030d/3e2902/g;s/91071f/92650F/g;s/680516/D0982C/g;s/cf0a2c/c58813/g;s/700618/74500b/g;s/530412/92650F/g' /tmp/${softcenter_installing_todo}/webs/Module_${softcenter_installing_todo}.asp >/dev/null 2>&1
 		else
+			echo_date "为插件【${softcenter_installing_name}】安装ASUSWRT风格皮肤..."
 			sed -i '/rogcss/d' /tmp/${softcenter_installing_todo}/webs/Module_${softcenter_installing_todo}.asp >/dev/null 2>&1
 		fi
 	fi
