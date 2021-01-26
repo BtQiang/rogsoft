@@ -102,7 +102,7 @@ install_tar(){
 
 			# 检查jffs空间，不可描述不做检测，交给插件自己处理
 			local JFFS_AVAL=$(jffs_space)
-			if [ "${MODULE_NAME}" != "shadowsocks" ];then
+			if [ "${MODULE_NAME}" != "shadowsocks" -a "${MODULE_NAME}" != "merlinclash" ];then
 				echo_date "检测jffs分区剩余空间..."
 				local JFFS_NEED=$(du -s /tmp/${MODULE_NAME} | awk '{print $1}')
 				local TAR_SIZE=$(du -s /tmp/${soft_name} | awk '{print $1}')
