@@ -8,7 +8,7 @@
 | ------------------------------------------------------------ | -------- | ------- | ------------ | ----- | ------ | ------------------- |
 | [RT-AC86U](http://koolshare.cn/thread-127878-1-1.html)       | ks梅林改 | BCM4906 | hnd          | ARMV8 | 4.1.27 | asuswrt             |
 | [RT-AC86U](http://koolshare.cn/thread-139965-1-1.html)       | ks官改   | BCM4906 | hnd          | ARMV8 | 4.1.27 | rog/asuswrt **[1]** |
-| GT-AC2900【即将支持】                                        | ks梅林改 | BCM4906 | hnd          | ARMV8 | 4.1.27 | asuswrt             |
+| GT-AC2900【即将支持】                                        | ks梅林改 | BCM4906 | hnd          | ARMV8 | 4.1.27 | asuswrt**[2]**      |
 | [GT-AC5300](http://koolshare.cn/thread-130902-1-1.html)      | ks官改   | BCM4908 | hnd          | ARMV8 | 4.1.27 | rog  (红色)         |
 | [RT-AX88U](http://koolshare.cn/thread-158199-1-1.html)       | ks梅林改 | BCM4908 | axhnd        | ARMV8 | 4.1.51 | asuswrt             |
 | [NETGEAR RAX80](https://koolshare.cn/thread-177255-1-1.html) | ks梅林改 | BCM4908 | axhnd        | ARMV8 | 4.1.51 | asuswrt             |
@@ -32,6 +32,7 @@
 - ZenWiFi_XD4/灵耀AX魔方/RT-AX56_XD4 这三个名字代表的是一个机型；
 - RT-AX56U_V2/RT-AX56U青春版/RT-AX56U热血版/RT-AX56U刺客信条版，这四个名字代表一个机型。
 - **[1]**：RT-AC86U从384_81918_koolshare固件版本开始，使用的是asuswrt风格ui，而不是rog风格。
+- **[2]**：GT-AC2900梅林固件华硕官方的rog风格不一样，是asuswrt风格，所以梅林改也是asuswrt风格。
 
 ## 用户须知
 
