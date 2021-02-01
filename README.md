@@ -8,7 +8,7 @@
 | ------------------------------------------------------------ | -------- | ------- | ------------ | ----- | ------ | ------------------- |
 | [RT-AC86U](http://koolshare.cn/thread-127878-1-1.html)       | ks梅林改 | BCM4906 | hnd          | ARMV8 | 4.1.27 | asuswrt             |
 | [RT-AC86U](http://koolshare.cn/thread-139965-1-1.html)       | ks官改   | BCM4906 | hnd          | ARMV8 | 4.1.27 | rog/asuswrt **[1]** |
-| GT-AC2900【即将支持】                                        | ks梅林改 | BCM4906 | hnd          | ARMV8 | 4.1.27 | asuswrt**[2]**      |
+| [GT-AC2900](https://koolshare.cn/thread-191639-1-1.html)     | ks梅林改 | BCM4906 | hnd          | ARMV8 | 4.1.27 | asuswrt**[2]**      |
 | [GT-AC5300](http://koolshare.cn/thread-130902-1-1.html)      | ks官改   | BCM4908 | hnd          | ARMV8 | 4.1.27 | rog  (红色)         |
 | [RT-AX88U](http://koolshare.cn/thread-158199-1-1.html)       | ks梅林改 | BCM4908 | axhnd        | ARMV8 | 4.1.51 | asuswrt             |
 | [NETGEAR RAX80](https://koolshare.cn/thread-177255-1-1.html) | ks梅林改 | BCM4908 | axhnd        | ARMV8 | 4.1.51 | asuswrt             |
@@ -16,7 +16,7 @@
 | [RT-AX92U](https://koolshare.cn/thread-191634-1-1.html)      | ks官改   | BCM4906 | axhnd        | ARMV8 | 4.1.51 | asuswrt             |
 | RT-AX68U【即将支持】                                         | ks官改   | BCM4906 | p1axhnd.675x | ARMV8 | 4.1.52 | asuswrt             |
 | [RT-AX86U/RT-AX86U高达版](https://koolshare.cn/thread-181845-1-1.html) | ks官改   | BCM4908 | p1axhnd.675x | ARMV8 | 4.1.52 | asuswrt             |
-| RT-AX86U/RT-AX86U高达版【即将支持】                          | ks梅林改 | BCM4908 | p1axhnd.675x | ARMV8 | 4.1.52 | asuswrt             |
+| [RT-AX86U/RT-AX86U高达版](https://koolshare.cn/thread-191637-1-1.html) | ks梅林改 | BCM4908 | p1axhnd.675x | ARMV8 | 4.1.52 | asuswrt             |
 | [TUF-AX3000/TUF-AX3000刺客信条版](https://koolshare.cn/thread-179968-1-1.html) | ks官改   | BCM6750 | axhnd.675x   | ARMV7 | 4.1.52 | tuf（橙色）         |
 | [RT-AX82U/RT-AX82U高达版](https://koolshare.cn/thread-xxxxxx-1-1.html) | ks官改   | BCM6750 | axhnd.675x   | ARMV7 | 4.1.52 | asuswrt             |
 | [ZenWiFi AX6600/灵耀 AX6600M](https://koolshare.cn/thread-187704-1-1.html) | ks官改   | BCM6755 | axhnd.675x   | ARMV7 | 4.1.52 | asuswrt             |
