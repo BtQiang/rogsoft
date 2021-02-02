@@ -265,17 +265,17 @@
             "version": "1.6"
         }, 
         {
-            "build_date": "2021-02-01_21:45:05", 
+            "build_date": "2021-02-02_09:50:12", 
             "changelog": "", 
             "description": "wifi boost: 路由器WiFi功率增强，增加信号覆盖范围。", 
             "home_url": "Module_wifiboost.asp", 
-            "md5": "0f6968ba7fdab09f8fb313936cf8786b", 
+            "md5": "47a701b509318c3dc924a0aebd7ac00a", 
             "name": "wifiboost", 
             "port": "8083", 
             "server": "42.192.18.234", 
             "tar_url": "wifiboost/wifiboost.tar.gz", 
             "title": "wifi boost", 
-            "version": "3.5"
+            "version": "3.6"
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/koolshare/koolshare.github.io/master", 

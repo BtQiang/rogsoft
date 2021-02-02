@@ -108,8 +108,8 @@ dbus remove wifiboost_warn
 sync
 echo_date "【${TITLE}】插件正在安装，请稍后！"
 #cd /koolshare/bin && ./wifiboost install
-if [ -f "/jffs/koolshare/bin/start-stop-daemon" ];then
-	/jffs/koolshare/bin/start-stop-daemon -S -q -b -x /koolshare/bin/wifiboost -- install
+if [ -f "/koolshare/bin/start-stop-daemon" ];then
+	/koolshare/bin/start-stop-daemon -S -q -b -x /koolshare/bin/wifiboost -- install
 else
 	/koolshare/bin/wifiboost install
 fi
