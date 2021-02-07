@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE="routerdog"
-VERSION="1.0"
+VERSION="1.1"
 TITLE="路由狗"
 DESCRIPTION="路由狗，路由看家好帮手~"
 HOME_URL="Module_routerdog.asp"

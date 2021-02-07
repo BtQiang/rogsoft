@@ -72,7 +72,7 @@ if [ "${MODEL}" == "TUF-AX3000" ];then
 fi
 
 # 安装插件
-cp -f /tmp/routerdog/bin/* /koolshare/bin/
+cp -rf /tmp/routerdog/bin/* /koolshare/bin/
 cp -rf /tmp/routerdog/scripts/* /koolshare/scripts/
 cp -rf /tmp/routerdog/webs/* /koolshare/webs/
 cp -rf /tmp/routerdog/res/* /koolshare/res/
