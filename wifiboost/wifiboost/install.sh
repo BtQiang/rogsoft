@@ -19,7 +19,7 @@ LINUX_VER=$(uname -r|awk -F"." '{print $1$2}')
 _get_type() {
 	local FWTYPE=$(nvram get extendno|grep koolshare)
 	if [ -d "/koolshare" ];then
-		if [ -n $FWTYPE ];then
+		if [ -n "${FWTYPE}" ];then
 			echo "koolshare官改固件"
 		else
 			echo "koolshare梅林改版固件"
@@ -51,7 +51,7 @@ exit_install(){
 	esac
 }
 
-# 判断路由架构和平台：koolshare固件，并且linux版本大于等于4.1
+# 判断路由架构和平台
 if [ -d "/koolshare" -a -f "/usr/bin/skipd" -a "${LINUX_VER}" -ge "41" ];then
 	echo_date 机型：${MODEL} $(_get_type) 符合安装要求，开始安装插件！
 else

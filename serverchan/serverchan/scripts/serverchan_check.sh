@@ -2,10 +2,10 @@
 source /koolshare/scripts/base.sh
 eval $(dbus export serverchan_)
 model=$(nvram get model)
-if [ "${routerhook_config_ntp}" == "" ]; then
+if [ "${serverchan_config_ntp}" == "" ]; then
     ntp_server="ntp1.aliyun.com"
 else
-    ntp_server=${routerhook_config_ntp}
+    ntp_server=${serverchan_config_ntp}
 fi
 ntpclient -h ${ntp_server} -i3 -l -s >/dev/null 2>&1
 serverchan_info_text=/tmp/.serverchan_info.md
