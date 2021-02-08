@@ -77,6 +77,7 @@ cp -rf /tmp/routerdog/scripts/* /koolshare/scripts/
 cp -rf /tmp/routerdog/webs/* /koolshare/webs/
 cp -rf /tmp/routerdog/res/* /koolshare/res/
 cp -rf /tmp/routerdog/uninstall.sh /koolshare/scripts/uninstall_routerdog.sh
+
 if [ "$ROG" == "1" ];then
 	echo_date "安装ROG皮肤！"
 	continue
