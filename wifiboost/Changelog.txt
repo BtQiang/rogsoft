@@ -1,5 +1,9 @@
 Koolshare Asuswrt-Merlin wifiboost Changelog for HND/AXHND platform
 ===========================================
+3.7
+   - fix	修复RT-AX56U的功率条显示错误的问题。
+   - fix	修复将梅林固件判断为官方固件的问题。
+
 3.6
    - fix	修复部分机型升级固件后出现错误8的提示。
 

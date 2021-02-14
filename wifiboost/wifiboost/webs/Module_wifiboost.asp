@@ -299,7 +299,7 @@ function register_event(){
 			var current_maxp52 = '<% nvram_get("1:maxp5gb0a0"); %>';
 			var current_maxp58 = '<% nvram_get("2:maxp5gb0a0"); %>';
 		}
-	}else if(odm == "RT-AX55"){
+	}else if(odm == "RT-AX55" || odm == "RT-AX56U"){
 		// wuo wifi router new format
 		var current_maxp24 = '<% nvram_get("sb/0/maxp2ga0"); %>';
 		var current_maxp52 = '<% nvram_get("sb/1/maxp5gb0a0"); %>';
@@ -967,30 +967,18 @@ function verifyFields(r) {
 													var BUILD = '<% nvram_get("buildno"); %>'
 													var FWVER = '<% nvram_get("extendno"); %>';
 													var RC_SUPPORT = '<% nvram_get("rc_support"); %>';
-													if (FWVER){
-														if (FWVER.indexOf('koolshare') != -1){
-															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;官改固件");
-														}else if(FWVER == "0"){
-															//ML正式版
-															if(RC_SUPPORT.indexOf("koolsoft") != -1){
-																$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林改版固件");
-															}else{
-																$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林原版固件");
-															}
+													if (FWVER.indexOf('.') != -1){
+														if(RC_SUPPORT.indexOf("koolsoft") != -1){
+															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;官改固件");
 														}else{
-															//非正式版，eg： alpha4，beta1，82072-gc842320
-															if (FWVER.indexOf('alpha') != -1 || FWVER.indexOf('beta') != -1) {
-																if(RC_SUPPORT.indexOf("koolsoft") != -1){
-																	$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林改版固件");
-																}else{
-																	$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林原版固件");
-																}
-															}else{
-																$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;华硕官方固件");
-															}
+															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;华硕官方固件");
 														}
 													}else{
-														$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + "<% nvram_get("firmver"); %>" + "." + BUILD + "_" + FWVER + "&nbsp;&nbsp;华硕官方固件");
+														if(RC_SUPPORT.indexOf("koolsoft") != -1){
+															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林改版固件");
+														}else{
+															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林原版固件");
+														}
 													}
 												</script>	
 											</tr>
