@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MODULE="rog"
-VERSION="4.0"
+VERSION="4.1"
 TITLE="ROG工具箱"
 DESCRIPTION="一些小功能的插件"
 HOME_URL="Module_rog.asp"
