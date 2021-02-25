@@ -221,7 +221,7 @@ install_ks_module() {
 	# fi
 
 	# 13. 检查.valid 字符串
-	# if [ -z "$(grep -w arm384 /tmp/${softcenter_installing_todo}/.valid)" ];then
+	# if [ -z "$(grep -w hnd /tmp/${softcenter_installing_todo}/.valid)" ];then
 	# 	echo_date "软件中心：该插件包不能在本平台安装！"
 	# 	quit_ks_install
 	# fi
