@@ -1,9 +1,9 @@
 #!/bin/sh
 
 MODULE="usb2jffs"
-VERSION="1.6"
+VERSION="1.8"
 TITLE="USB2JFFS"
-DESCRIPTION="轻松用U盘挂载jffs"
+DESCRIPTION="使用U盘轻松挂载jffs"
 HOME_URL="Module_usb2jffs.asp"
 
 # Check and include base

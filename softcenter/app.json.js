@@ -1,11 +1,11 @@
 {
     "apps": [
         {
-            "build_date": "2021-02-08_21:38:26", 
+            "build_date": "2021-02-27_23:12:30", 
             "changelog": "", 
             "description": "自动部署SSL证书", 
             "home_url": "Module_acme.asp", 
-            "md5": "a421e15dbe67a8bd80bafd03435000d2", 
+            "md5": "4aee32fe30a898cd71543e4899256efb", 
             "name": "acme", 
             "tar_url": "acme/acme.tar.gz", 
             "title": "Let's Encrypt", 
@@ -243,26 +243,26 @@
             "version": "1.9"
         }, 
         {
-            "build_date": "2021-02-08_21:38:32", 
+            "build_date": "2021-02-27_23:12:35", 
             "changelog": "", 
             "description": "让路由器运行更稳定~", 
             "home_url": "Module_swap.asp", 
-            "md5": "e480a1c2e916be56f2b09cd8d8300aeb", 
+            "md5": "da639fd5c798fe087600a24a87605129", 
             "name": "swap", 
             "tar_url": "swap/swap.tar.gz", 
             "title": "虚拟内存", 
-            "version": "2.1"
+            "version": "2.2"
         }, 
         {
-            "build_date": "2021-02-08_21:38:20", 
+            "build_date": "2021-02-27_23:17:16", 
             "changelog": "", 
-            "description": "轻松用U盘挂载jffs", 
+            "description": "使用U盘轻松挂载jffs", 
             "home_url": "Module_usb2jffs.asp", 
-            "md5": "463ba4147b09544c26ad4b9dd745ff80", 
+            "md5": "1983010cb693aea94c4d812f8e922900", 
             "name": "usb2jffs", 
             "tar_url": "usb2jffs/usb2jffs.tar.gz", 
             "title": "USB2JFFS", 
-            "version": "1.6"
+            "version": "1.8"
         }, 
         {
             "build_date": "2021-02-14_10:51:54", 
@@ -279,7 +279,7 @@
         }
     ], 
     "home_url": "https://raw.githubusercontent.com/koolshare/koolshare.github.io/master", 
-    "md5": "59bc4c093948b8f9e9fc70f7afb81879", 
+    "md5": "61fb75f22e60ff670174d2ce47ae285a", 
     "tar_url": "softcenter/softcenter.tar.gz", 
     "version": "1.6.8"
 }
