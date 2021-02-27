@@ -9,7 +9,7 @@ alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】'
 #LOG_FILE=/data/usb2jffs_log_m.txt
 LOG_FILE=/tmp/upload/usb2jffs_log.txt
 
-MTPATH=$2
+MTPATH=$1
 
 stop_software_center(){
 	killall skipd >/dev/null 2>&1

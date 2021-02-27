@@ -243,26 +243,26 @@
             "version": "1.9"
         }, 
         {
-            "build_date": "2021-02-27_23:12:35", 
+            "build_date": "2021-02-27_23:47:26", 
             "changelog": "", 
             "description": "让路由器运行更稳定~", 
             "home_url": "Module_swap.asp", 
-            "md5": "da639fd5c798fe087600a24a87605129", 
+            "md5": "37c6e64a6e9724d495c3c1b47a66b9ba", 
             "name": "swap", 
             "tar_url": "swap/swap.tar.gz", 
             "title": "虚拟内存", 
-            "version": "2.2"
+            "version": "2.3"
         }, 
         {
-            "build_date": "2021-02-27_23:31:01", 
+            "build_date": "2021-02-27_23:47:22", 
             "changelog": "", 
             "description": "使用U盘轻松挂载jffs", 
             "home_url": "Module_usb2jffs.asp", 
-            "md5": "e087c1383031efd1a9635e4a4f2b6515", 
+            "md5": "d7729202919cfbcda270085f4855e021", 
             "name": "usb2jffs", 
             "tar_url": "usb2jffs/usb2jffs.tar.gz", 
             "title": "USB2JFFS", 
-            "version": "1.8"
+            "version": "1.9"
         }, 
         {
             "build_date": "2021-02-14_10:51:54", 

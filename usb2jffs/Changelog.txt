@@ -1,6 +1,6 @@
 Koolshare Asuswrt-Merlin USB2JFFS Changelog for HND/AXHND platform
 ===========================================
-1.8 
+1.8 - 1.9
    - update	将插件使用条件改为读20MB/s，写30MB/s
    - update	现在插件更新的时候将同时更新到USB JFFS和原始的MTD JFFS
    - update	优化插件开机启动逻辑，修复部分机器开机后不自动挂载的问题
