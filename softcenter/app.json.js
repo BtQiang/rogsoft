@@ -243,15 +243,15 @@
             "version": "1.9"
         }, 
         {
-            "build_date": "2021-02-27_23:47:26", 
+            "build_date": "2021-02-28_00:06:12", 
             "changelog": "", 
             "description": "让路由器运行更稳定~", 
             "home_url": "Module_swap.asp", 
-            "md5": "37c6e64a6e9724d495c3c1b47a66b9ba", 
+            "md5": "2b30d813346c21e3a6536b30c61bd9ab", 
             "name": "swap", 
             "tar_url": "swap/swap.tar.gz", 
             "title": "虚拟内存", 
-            "version": "2.3"
+            "version": "2.4"
         }, 
         {
             "build_date": "2021-02-27_23:55:06", 
