@@ -252,7 +252,24 @@ install_now(){
 	exit_install 0
 }
 
+softver_check(){
+	# 判断软件中心版本
+	if [ -f "/koolshare/.soft_ver" ];then
+		local CUR_VERSION=$(cat /koolshare/.soft_ver)
+	else
+		local CUR_VERSION="0"
+	fi
+	local NEED_VERSION="1.6.8"
+	local COMP=$(/rom/etc/koolshare/bin/versioncmp ${CUR_VERSION} ${NEED_VERSION})
+	if [ "${COMP}" == "1" ]; then
+		echo_date "软件中心版本：${CUR_VERSION}，版本号过低，不支持本插件，请将软件中心更新到最新后重试！" 
+		rm -rf /tmp/${module}* >/dev/null 2>&1
+		exit 1
+	fi
+}
+
 install(){
+	softver_check
 	get_model
 	get_fw_type
 	platform_test
