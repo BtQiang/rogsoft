@@ -2,6 +2,9 @@ Koolshare Asuswrt-Merlin softeware center Changelog
 ===========================================
 1.6.8
    - update	更新优化软件中心在线/离线安装逻辑；
+   - fix	修复部分插件开机启动无法运行的问题；
+   - add	新增services-stop触发脚本，其触发的脚本示例：/koolshare/init.d/T99xxx.sh
+   - add	新增GT-AX11000梅林固件支持
 
 1.6.5
    - fix	更新web，修复一些小问题；
