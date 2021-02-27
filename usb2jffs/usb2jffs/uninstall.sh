@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sh /koolshare/scripts/usb2jffs_configs.sh stop 3
+sh /koolshare/scripts/usb2jffs_config.sh stop 3
 
 rm -rf /koolshare/res/icon-usb2jffs.png >/dev/null 2>&1
 rm -rf /koolshare/scripts/usb2jffs* >/dev/null 2>&1
