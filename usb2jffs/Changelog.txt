@@ -8,7 +8,7 @@ Koolshare Asuswrt-Merlin USB2JFFS Changelog for HND/AXHND platform
    - update	同步功能移动到同步标签页内
    - update	新安装插件时，同步功能默认关闭
    - update	优化插件的状态显示
-   - add	添加备份功能，现在可以自由备份.koolshare_jffs文件夹，并且下载备份
+   - add	添加备份功能，现在可以自由备份.koolshare_jffs文件夹，并且可以下载备份，上传备份
 
 1.6 
    - add	添加arm384机型支持。（需要arm384的1.0.4版本软件中心支持）
