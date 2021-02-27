@@ -261,7 +261,32 @@ install_tar(){
 	# 12. do something here for package real name
 	detect_package "${MODULE_NAME}"
 
-	# 13. check jffs space
+	# 13. some package not come from koolshare
+	if [ ! -f "/tmp/${NAME_PREFIX}/webs/Module_${MODULE_NAME}.asp" ];then
+		# 插件必须有web页面，没有则不合规
+		echo_date "没有找到插件的web页面！"
+		echo_date "你上传的文件可能不是koolshare软件中心离线安装包！"
+		echo_date "退出本次离线安装！"
+		exit_tar_install 1
+	fi
+	if [ ! -d "/tmp/${NAME_PREFIX}/scripts" ];then
+		# 插件必须有scripts文件夹，没有则不合规
+		echo_date "没有找到插件的相关脚本！"
+		echo_date "你上传的文件可能不是koolshare软件中心离线安装包！"
+		echo_date "退出本次离线安装！"
+		exit_tar_install 1
+	fi
+	
+	# 14. some package have evil scripts thar modify software center scripts
+	local EVIL_MATCH_1=$(cat ${INSTALL_SCRIPT}|grep "detect_package")
+	local EVIL_MATCH_2=$(cat ${INSTALL_SCRIPT}|grep "ks_tar_install")
+	if [ -n "${EVIL_MATCH_1}" -o -n "${EVIL_MATCH_2}" ];then
+		echo_date "发现当前插件的安装脚本会对软件中心文件进行修改操作！"
+		echo_date "退出本次离线安装！"
+		exit_tar_install 1
+	fi
+
+	# 15. check jffs space
 	local JFFS_AVAIL1=$(jffs_space)
 	local JFFS_AVAIL2=$((${JFFS_AVAIL1} - 2048))
 	local JFFS_NEEDED=$(du -s /tmp/${MODULE_NAME} | awk '{print $1}')
@@ -328,7 +353,7 @@ install_tar(){
 		echo_date "安装此插件不进行JFFS空间检测，交由插件自行检测！请自行注意JFFS使用情况！"
 	fi	
 
-	# 14. 检查下安装包是否是hnd的
+	# 16. 检查下安装包是否是hnd的
 	if [ -f "${SCRIPT_AB_DIR}/.valid" -a -n "$(grep hnd ${SCRIPT_AB_DIR}/.valid)" ];then
 		continue
 	elif [ "${MODULE_NAME}" == "shadowsocks" ];then
@@ -341,17 +366,17 @@ install_tar(){
 		exit_tar_install 1
 	fi
 
-	# 15. 开始安装
+	# 17. 开始安装
 	if [ "${MODULE_NAME}" != "softcenter" ];then
 		echo_date "准备安装插件：${MODULE_NAME}"
 	else
 		echo_date "准备更新软件中心！"
 	fi
 	
-	# 16. 先移除版本号，后面再写
+	# 18. 先移除版本号，后面再写
 	dbus remove softcenter_module_${MODULE_NAME}_version
 
-	# 17. 兼容旧的UI存放方式
+	# 19. 兼容旧的UI存放方式
 	get_ui_type
 	# -----------------------------------------------------------------------
 	if [ -d "/tmp/${MODULE_NAME}/GT-AC5300" -a "${UI_TYPE}" == "ROG" ]; then
@@ -373,7 +398,7 @@ install_tar(){
 	fi
 	# -----------------------------------------------------------------------
 
-	# 18. 运行安装脚本
+	# 20. 运行安装脚本
 	chmod +x ${INSTALL_SCRIPT} >/dev/null 2>&1
 	echo_date "运行安装脚本..."
 	echo_date "========================== step 2 ==============================="
@@ -383,7 +408,7 @@ install_tar(){
 		exit_tar_install 1 ${MODULE_NAME}
 	fi
 	
-	# 19. UI
+	# 21. UI
 	# -----------------------------------------------------------------------
 	if [ "${UI_TYPE}" == "ROG" ];then
 		continue
@@ -398,7 +423,7 @@ install_tar(){
 	sync
 	echo_date "========================== step 3 ==============================="
 	
-	# 20. 写入安装信息
+	# 22. 写入安装信息
 	if [ "${MODULE_NAME}" != "softcenter" ];then
 		# name
 		if [ -z "$(dbus get softcenter_module_${MODULE_NAME}_name)" ];then
@@ -426,7 +451,7 @@ install_tar(){
 		fi
 	fi
 
-	# 21. 安装完毕，打印剩余空间
+	# 23. 安装完毕，打印剩余空间
 	local JFFS_AVAIL3=$(jffs_space)
 	local JFFS_USED=$((${JFFS_AVAIL1} - ${JFFS_AVAIL3}))
 	if [ "${JFFS_USED}" -ge "0" ];then
