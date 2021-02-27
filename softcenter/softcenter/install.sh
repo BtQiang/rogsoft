@@ -1,7 +1,17 @@
 #!/bin/sh
+#
+########################################################################
+#
+# Copyright (C) 2010/2021 kooldev
+#
+# 此脚为 hnd/axhnd/axhnd.675x/p1axhnd.675x 平台软件中心安装脚本。
+# 软件中心地址: https://github.com/koolshare/rogsoft
+#
+########################################################################
 
-alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】'
+alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】:'
 MODEL=
+UI_TYPE=ASUSWRT
 FW_TYPE_CODE=
 FW_TYPE_NAME=
 
@@ -37,16 +47,19 @@ get_fw_type() {
 }	
 
 get_ui_type(){
-	# # 获取机型
+	# 获取机型
 	# get_model
 
-	# # 获取固件类型
+	# 获取固件类型
 	# get_fw_type
 
 	# 参数获取
 	[ "${MODEL}" == "RT-AC86U" ] && local ROG_RTAC86U=0
 	[ "${MODEL}" == "GT-AC2900" ] && local ROG_GTAC2900=1
+	[ "${MODEL}" == "GT-AC5300" ] && local ROG_GTAC5300=1
 	[ "${MODEL}" == "GT-AX11000" ] && local ROG_GTAX11000=1
+	[ "${MODEL}" == "GT-AXE11000" ] && local ROG_GTAXE11000=1
+	UI_TYPE="ASUSWRT"
 	local KS_TAG=$(nvram get extendno|grep koolshare)
 	local EXT_NU=$(nvram get extendno)
 	local EXT_NU=$(echo ${EXT_NU%_*} | grep -Eo "^[0-9]{1,10}$")
@@ -73,22 +86,14 @@ get_ui_type(){
 		ROG_GTAX11000=0
 	fi
 	
-	if [ "${MODEL}" == "GT-AC5300" -o "${ROG_RTAC86U}" == "1" -o "${ROG_GTAC2900}" == "1" -o "${ROG_GTAX11000}" == "1" -o "${MODEL}" == "GT-AXE11000" ];then
+	if [ "${ROG_GTAC5300}" == "1" -o "${ROG_RTAC86U}" == "1" -o "${ROG_GTAC2900}" == "1" -o "${ROG_GTAX11000}" == "1" -o "${ROG_GTAXE11000}" == "1" ];then
 		# GT-AC5300、RT-AC86U部分版本、GT-AC2900部分版本、GT-AX11000部分版本、GT-AXE11000全部版本，骚红皮肤
-		ROG=1
 		UI_TYPE="ROG"
 	fi
 	
 	if [ "${MODEL}" == "TUF-AX3000" ];then
 		# 官改固件，橙色皮肤
-		TUF=1
-		UI_TYPE="TUF"C
-	fi
-
-	if [ -z "${ROG}" -a -z "${TUF}" ];then
-		# 普通皮肤
-		ASUSWRT=1
-		UI_TYPE="ASUSWRT"
+		UI_TYPE="TUF"
 	fi
 }
 
@@ -280,14 +285,14 @@ softcenter_install() {
 	fi
 	echo_date "开机启动项检查完毕！"
 
-	chmod 755 /${KSPATH}/scripts/*
-	chmod 755 /${KSPATH}/.koolshare/bin/*
-	chmod 755 /${KSPATH}/.koolshare/init.d/*
-	chmod 755 /${KSPATH}/.koolshare/perp/*
-	chmod 755 /${KSPATH}/.koolshare/perp/.boot/*
-	chmod 755 /${KSPATH}/.koolshare/perp/.control/*
-	chmod 755 /${KSPATH}/.koolshare/perp/httpdb/*
-	chmod 755 /${KSPATH}/.koolshare/scripts/*
+	chmod 755 /${KSPATH}/scripts/* >/dev/null 2>&1
+	chmod 755 /${KSPATH}/.koolshare/bin/* >/dev/null 2>&1
+	chmod 755 /${KSPATH}/.koolshare/init.d/* >/dev/null 2>&1
+	chmod 755 /${KSPATH}/.koolshare/perp/* >/dev/null 2>&1
+	chmod 755 /${KSPATH}/.koolshare/perp/.boot/* >/dev/null 2>&1
+	chmod 755 /${KSPATH}/.koolshare/perp/.control/* >/dev/null 2>&1
+	chmod 755 /${KSPATH}/.koolshare/perp/httpdb/* >/dev/null 2>&1
+	chmod 755 /${KSPATH}/.koolshare/scripts/* >/dev/null 2>&1
 
 	# reset some default value
 	echo_date "设定一些默认值..."
@@ -314,12 +319,12 @@ exit_install(){
 			echo_date "本软件中心支持机型/平台：https://github.com/koolshare/rogsoft#rogsoft"
 			echo_date "退出安装！"
 			rm -rf /tmp/${module}* >/dev/null 2>&1
-			echo_date "-----------------------------------------------------------------------------"
+			echo_date "----------------------------------------------------------------"
 			exit 1
 			;;
 		0|*)
 			rm -rf /tmp/${module}* >/dev/null 2>&1
-			echo_date "-----------------------------------------------------------------------------"
+			echo_date "----------------------------------------------------------------"
 			exit 0
 			;;
 	esac
@@ -330,16 +335,16 @@ install_now(){
 	if [ "$?" == "0" ];then
 		echo_date "检测到你使用USB磁盘挂载了/jffs！"
 		echo_date "软件中心此次将同时安装到系统jffs和usb jffs！"
-		echo_date "----------------------- 更新软件中心到USB JFFS（/jffs）-----------------------"
+		echo_date "------------------ 更新软件中心到USB JFFS（/jffs）------------------"
 		softcenter_install jffs
-		echo_date "-----------------------------------------------------------------------------"
-		echo_date "----------------------- 更新软件中心到系统 JFFS（/cifs2）----------------------"
+			echo_date "----------------------------------------------------------------"
+		echo_date "------------------ 更新软件中心到系统 JFFS（/cifs2）----------------"
 		softcenter_install cifs2
-		echo_date "-----------------------------------------------------------------------------"
+			echo_date "----------------------------------------------------------------"
 	else
-		echo_date "----------------------- 更新软件中心到系统 JFFS（/jffs）-----------------------"
+		echo_date "------------------ 更新软件中心到系统 JFFS（/jffs）-----------------"
 		softcenter_install jffs
-		echo_date "-----------------------------------------------------------------------------"
+			echo_date "----------------------------------------------------------------"
 	fi
 	rm -rf /tmp/softcenter*
 }

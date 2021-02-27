@@ -4,6 +4,8 @@ export KSROOT=/koolshare
 export PERP_BASE=$KSROOT/perp
 export PATH=$KSROOT/bin:$KSROOT/scripts:$PATH
 
+alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】:'
+
 ACTION=$1
 ID=$1
 export LANIP=127.0.0.1
