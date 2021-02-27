@@ -262,14 +262,14 @@ install_tar(){
 	detect_package "${MODULE_NAME}"
 
 	# 13. some package not come from koolshare
-	if [ ! -f "/tmp/${NAME_PREFIX}/webs/Module_${MODULE_NAME}.asp" ];then
+	if [ ! -f "/tmp/${MODULE_NAME}/webs/Module_${MODULE_NAME}.asp" -a "${MODULE_NAME}" != "softcenter" ];then
 		# 插件必须有web页面，没有则不合规
 		echo_date "没有找到插件的web页面！"
 		echo_date "你上传的文件可能不是koolshare软件中心离线安装包！"
 		echo_date "退出本次离线安装！"
 		exit_tar_install 1
 	fi
-	if [ ! -d "/tmp/${NAME_PREFIX}/scripts" ];then
+	if [ ! -d "/tmp/${MODULE_NAME}/scripts" ];then
 		# 插件必须有scripts文件夹，没有则不合规
 		echo_date "没有找到插件的相关脚本！"
 		echo_date "你上传的文件可能不是koolshare软件中心离线安装包！"
