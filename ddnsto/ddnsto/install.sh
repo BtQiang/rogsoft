@@ -153,8 +153,8 @@ install_now(){
 	cp -rf /tmp/${module}/uninstall.sh /koolshare/scripts/uninstall_${module}.sh
 
 	# Permissions
-	chmod +X /koolshare/bin/* >/dev/null 2>&1
-	chmod +X /koolshare/scripts/* >/dev/null 2>&1
+	chmod +x /koolshare/bin/* >/dev/null 2>&1
+	chmod +x /koolshare/scripts/* >/dev/null 2>&1
 
 	# make start up script link
 	[ ! -L "/koolshare/init.d/S70${module}.sh" ] && ln -sf /koolshare/scripts/${module}_config.sh /koolshare/init.d/S70${module}.sh
