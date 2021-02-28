@@ -168,7 +168,7 @@ usb2jffs_install(){
 
 	# isntall file
 	echo_date "安装插件相关文件..."
-	find /${KSHOME}/.koolshare/init.d/ -name "*${module}.sh*"|xargs rm -rf >/dev/null 2>&1
+	find /${KSHOME}/.koolshare/init.d/ -name "*${module}*"|xargs rm -rf >/dev/null 2>&1
 	cd /tmp
 	cp -rf /tmp/${module}/bin/* /${KSHOME}/.koolshare/res/
 	cp -rf /tmp/${module}/res/* /${KSHOME}/.koolshare/res/

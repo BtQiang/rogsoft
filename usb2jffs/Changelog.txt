@@ -1,5 +1,8 @@
 Koolshare Asuswrt-Merlin USB2JFFS Changelog for HND/AXHND platform
 ===========================================
+1.9.1
+   - fix	修复重启路由器时间过长的问题
+
 1.8 - 1.9
    - update	将插件使用条件改为读20MB/s，写30MB/s
    - update	现在插件更新的时候将同时更新到USB JFFS和原始的MTD JFFS
