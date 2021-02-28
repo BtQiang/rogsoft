@@ -127,10 +127,15 @@ install_now(){
 	local DESCR="路由器功率增强，强过澳大利亚！"
 	local PLVER=$(cat ${DIR}/version)
 
+	# remove some useless file
+	if [ -f "/koolshare/res/wifiboost" ];then
+		rm -rf /koolshare/res/wifiboost
+	fi
+
 	# isntall file
 	echo_date "安装插件相关文件..."
 	cd /tmp
-	cp -rf /tmp/${module}/bin/wifiboost /koolshare/res/
+	cp -rf /tmp/${module}/bin/wifiboost /koolshare/bin/
 	cp -rf /tmp/${module}/res/* /koolshare/res/
 	cp -rf /tmp/${module}/scripts/* /koolshare/scripts/
 	cp -rf /tmp/${module}/webs/* /koolshare/webs/
