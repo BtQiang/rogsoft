@@ -17,13 +17,13 @@ do
 			# Source shell script for speed.
 			trap "" INT QUIT TSTP EXIT
 			if [ -r "$i" ]; then
-				_LOG "[软件中心]-[${0##*/}]: $i $ACTION"
+				_LOG "[杞欢涓績]-[${0##*/}]: $i $ACTION"
 				$i $ACTION
 			fi
 			;;
 		*)
 			# No sh extension, so fork subprocess.
-			_LOG "[软件中心]-[${0##*/}]: . $i $ACTION"
+			_LOG "[杞欢涓績]-[${0##*/}]: . $i $ACTION"
 			. $i $ACTION
 			;;
 	esac
