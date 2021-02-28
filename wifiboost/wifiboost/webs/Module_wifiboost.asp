@@ -967,17 +967,17 @@ function verifyFields(r) {
 													var BUILD = '<% nvram_get("buildno"); %>'
 													var FWVER = '<% nvram_get("extendno"); %>';
 													var RC_SUPPORT = '<% nvram_get("rc_support"); %>';
-													if (FWVER.indexOf('.') != -1){
+													if (BUILD.indexOf(".") != -1){
 														if(RC_SUPPORT.indexOf("koolsoft") != -1){
-															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;官改固件");
+															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林改版固件");
 														}else{
-															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;华硕官方固件");
+															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;梅林原版固件");
 														}
 													}else{
 														if(RC_SUPPORT.indexOf("koolsoft") != -1){
-															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林改版固件");
+															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;官改固件");
 														}else{
-															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "&nbsp;&nbsp;梅林原版固件");
+															$("#wifiboost_ver").html(MODEL + "&nbsp;&nbsp;" + BUILD + "_" + FWVER + "&nbsp;&nbsp;华硕官方固件");
 														}
 													}
 												</script>	
