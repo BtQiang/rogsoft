@@ -1,14 +1,13 @@
 #!/bin/sh
 
 source /koolshare/scripts/base.sh
-alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】'
+alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】:'
 eval $(dbus export usb2jffs_)
 LOG_FILE=/tmp/upload/usb2jffs_log.txt
 R_LIMIT=20
 W_LIMIT=30
 KSPATH=${usb2jffs_mount_path}
 true > ${LOG_FILE}
-http_response "$1"
 
 stop_software_center(){
 	killall skipd >/dev/null 2>&1
@@ -275,6 +274,8 @@ stop_usb2jffs(){
 				echo_date "删除失败！请重启路由器后重试！"
 				return 1
 			fi
+		else
+			return 0
 		fi
 	fi
 
@@ -756,10 +757,31 @@ upload_backup(){
 	fi
 }
 
-# by crontab
+number_test(){
+	case $1 in
+		''|*[!0-9]*)
+			echo 1
+			;;
+		*) 
+			echo 0
+			;;
+	esac
+}
+
+if [ $# == 2 -a $(number_test $1) == 0 ];then
+	http_response "$1"
+fi
+
 case $1 in
 sync)
+	# by crontab
 	sync_usb_mtd | tee -a ${LOG_FILE}
+	exit 0
+	;;
+stop)
+	# called by uninstall.sh
+	stop_usb2jffs 1 | tee -a ${LOG_FILE}
+	exit 0
 	;;
 esac
 
