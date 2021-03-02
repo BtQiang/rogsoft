@@ -1,5 +1,8 @@
 Koolshare Asuswrt-Merlin USB2JFFS Changelog for HND/AXHND platform
 ===========================================
+1.9.3
+   - fix	修复ROG/TUF UI的机型皮肤错误的问题
+
 1.9.2
    - fix	卸载USB2JFFS插件后导致软件中心停止工作的问题
 

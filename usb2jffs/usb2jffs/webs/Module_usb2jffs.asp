@@ -34,10 +34,14 @@
 		border-right: 1px solid #67767d;
 		border-bottom: none;
 		background: #67767d;
+		border: 1px solid #91071f; /* W3C rogcss */
+		background: none; /* W3C rogcss */
 	}
 	.show-btn1:hover, .show-btn2:hover, .show-btn3:hover, .show-btn4:hover, .show-btn5:hover, .active {
 		border: 1px solid #2f3a3e;
 		background: #2f3a3e;
+		border: 1px solid #91071f; /* W3C rogcss */
+		background: #91071f; /* W3C rogcss */
 	}
 	#log_content{
 		outline: 1px solid #222;
@@ -55,6 +59,7 @@
 		overflow-x:hidden;
 		border:0px solid #222;
 		background:#475A5F;
+		background:transparent; /* W3C rogcss */
 	}
 	.ks_btn {
 		border: 1px solid #222;
@@ -65,6 +70,7 @@
 		width:14%;
 		vertical-align: middle;
 		background: linear-gradient(to bottom, #003333  0%, #000000 100%);
+		background: linear-gradient(to bottom, #91071f  0%, #700618 100%); /* W3C rogcss */
 	}
 	.ks_btn:hover {
 		border: 1px solid #222;
@@ -75,7 +81,9 @@
 		width:14%;
 		vertical-align: middle;
 		background: linear-gradient(to bottom, #27c9c9  0%, #279fd9 100%);
+		background: linear-gradient(to bottom, #cf0a2c  0%, #91071f 100%); /* W3C rogcss */
 	}
+	#usb2jffs_disks_status, #usb2jffs_mount_status, #tablet_1, #tablet_2, #tablet_3, #tablet_4, #tablet_5 { border:1px solid #91071f; } /* W3C rogcss */
 	.input_option{
 		vertical-align:middle;
 		font-size:12px;
@@ -860,7 +868,7 @@ function help(){
 														]}
 													]);
 												</script>
-											</tr>												
+											</tr>										
 											</table>
 										</div>
 										<div id="tablet_4" style="display: none;">
