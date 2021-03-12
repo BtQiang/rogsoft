@@ -113,27 +113,28 @@ function show_ui_switch(){
 		if (EXT.indexOf('koolshare') != -1){
 			EXT_1 = EXT.match(/(\S*)_/)[1];
 			if(EXT_1 < "81918" && BLD != "386"){
-				$("#FANC").hide();
 				$("#UI_SWITCH").show();
+				$("#FAN_SETTING").hide();
 				$("#msg2").show();
 				get_dbus_data();
 			}else{
 				$("#UI_SWITCH").hide();
-				$("#FANC").hide();
+				$("#FAN_SETTING").hide();
 				$("#msg2").hide();
 			}
 		}else{
 			$("#UI_SWITCH").hide();
-			$("#FANC").hide();
+			$("#FAN_SETTING").hide();
 			$("#msg2").hide();
 		}
 	}else if(productid == "RAX80"){
 		$("#UI_SWITCH").hide();
+		$("#FAN_SETTING").show();
 		$("#msg2").hide();
 		get_dbus_data();
 	}else{
 		$("#UI_SWITCH").hide();
-		$("#FANC").hide();
+		$("#FAN_SETTING").hide();
 		$("#msg2").hide();
 	}
 }
@@ -567,7 +568,7 @@ function menu_hook(title, tab) {
 														</div>
 													</td>
 												</tr>
-												<tr id="UI_SWITCH">
+												<tr id="UI_SWITCH" style="display:none;">
 													<th>切换皮肤</th>
 													<td>
 														<input type="checkbox" id="rog_ui_flag" name="rog_ui_flag" >包括下架插件
@@ -576,7 +577,7 @@ function menu_hook(title, tab) {
 														<a style="cursor:pointer;" class="rog_btn" onclick="show_log()" >查看日志</a>
 													</td>
 												</tr>
-												<tr id="FANC">
+												<tr id="FAN_SETTING" style="display:none;">
 													<th>风扇控制</th>
 													<td>
 														<span>当前风扇档位：</span>
@@ -604,7 +605,7 @@ function menu_hook(title, tab) {
 											<div style="margin:10px 0 10px 5px;" class="splitLine"></div>
 											<div class="SimpleNote">
 												<li id="msg1">本插件支持温度显示等一些简单功能，用以弥补官改固件没有温度显示的遗憾。</li>
-												<li id="msg2">RT-AC86U固件支持【软件中心】和【插件】在Rog风格和Asuswrt风格皮肤之间的切换。</li>
+												<li id="msg2" style="display:none;">RT-AC86U固件支持【软件中心】和【插件】在Rog风格和Asuswrt风格皮肤之间的切换。</li>
 											</div>
 										</td>
 									</tr>
