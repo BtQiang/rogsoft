@@ -144,15 +144,15 @@
             "version": "1.3"
         }, 
         {
-            "build_date": "2021-02-08_21:38:15", 
+            "build_date": "2021-03-15_20:43:42", 
             "changelog": "", 
             "description": "通过pushplus将路由器状态推送到微信上", 
             "home_url": "Module_pushplus.asp", 
-            "md5": "1259100ef8a92abbac581d5da65a5d51", 
+            "md5": "b82239f5385df4933d7248e60c2f188c", 
             "name": "pushplus", 
             "tar_url": "pushplus/pushplus.tar.gz", 
             "title": "pushplus全能推送", 
-            "version": "0.3"
+            "version": "0.4"
         }, 
         {
             "build_date": "2021-02-08_21:38:17", 

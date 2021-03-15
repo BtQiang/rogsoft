@@ -1,5 +1,8 @@
 Koolshare hnd/axhnd router software center pushplus Changelog
 ===========================================
+0.4
+   - fix can't get online icon
+
 0.3
    - add switch for public ip
    - fix SSL invalided
