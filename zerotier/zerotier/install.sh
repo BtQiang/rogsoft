@@ -143,13 +143,13 @@ install_now(){
 	cp -rf /tmp/${module}/webs/* /koolshare/webs/
 	cp -rf /tmp/${module}/share /koolshare/
 	cp -rf /tmp/${module}/uninstall.sh /koolshare/scripts/uninstall_${module}.sh
+	mkdir -p /koolshare/lib/
 	if [ ! -x "/koolshare/bin/jq" ]; then
 		echo_date "安装jq..."
 		cp -f /tmp/${module}/bin/jq /koolshare/bin/
 	fi
 	if [ "$ARCH" == "aarch64" ]; then
 		echo_date "安装64位zerotier-one..."
-		mkdir -p /koolshare/lib/
 		cp -f /tmp/${module}/bin64/* /koolshare/bin/
 		cp -f /tmp/${module}/lib64/* /koolshare/lib/
 	fi
