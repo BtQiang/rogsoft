@@ -146,17 +146,17 @@ install_now(){
 	mkdir -p /koolshare/lib/
 	if [ ! -x "/koolshare/bin/jq" ]; then
 		echo_date "安装jq..."
-		cp -f /tmp/${module}/bin/jq /koolshare/bin/
+		cp -fP /tmp/${module}/bin/jq /koolshare/bin/
 	fi
 	if [ "$ARCH" == "aarch64" ]; then
 		echo_date "安装64位zerotier-one..."
-		cp -f /tmp/${module}/bin64/* /koolshare/bin/
-		cp -f /tmp/${module}/lib64/* /koolshare/lib/
+		cp -fP /tmp/${module}/bin64/* /koolshare/bin/
+		cp -fP /tmp/${module}/lib64/* /koolshare/lib/
 	fi
 	if [ "$ARCH" == "armv7l" ]; then
 		echo_date "安装32位zerotier-one..."
-		cp -f /tmp/${module}/bin32/* /koolshare/bin/
-		cp -f /tmp/${module}/lib32/* /koolshare/lib/
+		cp -fP /tmp/${module}/bin32/* /koolshare/bin/
+		cp -fP /tmp/${module}/lib32/* /koolshare/lib/
 	fi
 
 	# Permissions
