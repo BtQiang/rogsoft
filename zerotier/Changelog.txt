@@ -1,0 +1,5 @@
+Koolshare Asuswrt-Merlin ZeroTier Changelog for HND/AXHND platform
+===========================================
+
+1.1
+   - add	ZeroTier插件上线，Zerotier是一款开源，跨平台，简单易用的内网穿透工具，轻松帮你实现虚拟局域网的组建。
