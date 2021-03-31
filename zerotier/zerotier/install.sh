@@ -127,6 +127,12 @@ install_now(){
 	local DESCR="ZeroTier 内网穿透"
 	local PLVER=$(cat ${DIR}/version)
 
+	# stop first
+	local ENABLE=$(dbus get ${module}_enable)
+	if [ -n "${ENABLE}" ];then
+		/koolshare/scripts/zerotier_config.sh stop >/dev/null 2>&1
+	fi
+
 	# isntall file
 	echo_date "安装插件相关文件..."
 	local ARCH=$(uname -m)
@@ -170,6 +176,11 @@ install_now(){
 	dbus set softcenter_module_${module}_name="${module}"
 	dbus set softcenter_module_${module}_title="${TITLE}"
 	dbus set softcenter_module_${module}_description="${DESCR}"
+
+	# re-enable
+	if [ "${ENABLE}" == "1" ];then
+		/koolshare/scripts/zerotier_config.sh start >/dev/null 2>&1
+	fi
 	
 	# finish
 	echo_date "${TITLE}插件安装完毕！"

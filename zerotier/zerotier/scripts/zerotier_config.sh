@@ -816,6 +816,9 @@ start)
 		logger "zerotier插件未开启，跳过！"
 	fi
 	;;
+stop)
+	stop_zerotier | tee -a ${LOG_FILE}
+	;;
 esac
 
 case $2 in
