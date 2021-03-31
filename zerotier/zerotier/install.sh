@@ -181,7 +181,7 @@ install_now(){
 	# re-enable
 	if [ "${ENABLE}" == "1" ];then
 		echo_date "安装完毕，重新启用zerotier插件！"
-		/koolshare/scripts/zerotier_config.sh start >/dev/null 2>&1
+		/koolshare/scripts/zerotier_config.sh start
 	fi
 	
 	# finish
