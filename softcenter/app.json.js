@@ -278,11 +278,11 @@
             "version": "3.9"
         }, 
         {
-            "build_date": "2021-04-01_00:16:50", 
+            "build_date": "2021-04-01_00:18:13", 
             "changelog": "", 
             "description": "ZeroTier 内网穿透", 
             "home_url": "Module_zerotier.asp", 
-            "md5": "e09fb34658fe9a901a5691aa3c1bcb8a", 
+            "md5": "c8c7658f6fb2ef2d7ccc094f7576eadf", 
             "name": "zerotier", 
             "tar_url": "zerotier/zerotier.tar.gz", 
             "title": "ZeroTier", 

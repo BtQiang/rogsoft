@@ -129,7 +129,7 @@ install_now(){
 
 	# stop first
 	local ENABLE=$(dbus get ${module}_enable)
-	if [ -n "${ENABLE}" ];then
+	if [ "${ENABLE}" == "1" ];then
 		echo_date "先关闭zerotier插件，保证文件更新成功..."
 		/koolshare/scripts/zerotier_config.sh stop
 	fi
